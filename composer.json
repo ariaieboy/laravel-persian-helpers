@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "ariaieboy/laravel-persian-helpers",
+    "description": "Add more functionality for Persian language into Laravel",
     "keywords": [
-        ":vendor_name",
+        "Ariaieboy",
         "laravel",
-        ":package_slug"
+        "laravel-persian-helpers"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/ariaieboy/laravel-persian-helpers",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "AriaieBOY",
+            "email": "ariaieboy.ir@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,18 +30,17 @@
         "pestphp/pest-plugin-laravel": "^3.0",
         "phpstan/extension-installer": "^1.3",
         "phpstan/phpstan-deprecation-rules": "^1.1",
-        "phpstan/phpstan-phpunit": "^1.3",
-        "spatie/laravel-ray": "^1.35"
+        "phpstan/phpstan-phpunit": "^1.3"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Ariaieboy\\LaravelPersianHelpers\\": "src/",
+            "Ariaieboy\\LaravelPersianHelpers\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Ariaieboy\\LaravelPersianHelpers\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +62,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Ariaieboy\\LaravelPersianHelpers\\LaravelPersianHelpersServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelPersianHelpers": "Ariaieboy\\LaravelPersianHelpers\\Facades\\LaravelPersianHelpers"
             }
         }
     },
