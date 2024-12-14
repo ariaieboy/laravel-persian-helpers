@@ -2,7 +2,7 @@
 
 // config for Ariaieboy/LaravelPersianHelpers
 return [
-    'to_persian_digit'=>[
+    'to_persian_digit' => [
         '٠' => '۰',
         '0' => '۰',
         '١' => '۱',
@@ -24,7 +24,7 @@ return [
         '٩' => '۹',
         '9' => '۹',
     ],
-    'to_english_digit'=>[
+    'to_english_digit' => [
         '٠' => '0',
         '۰' => '0',
         '١' => '1',
@@ -46,7 +46,7 @@ return [
         '٩' => '9',
         '۹' => '9',
     ],
-    'to_persian_letter'=>[
+    'to_persian_letter' => [
         'أ' => 'ا',
         'إ' => 'ا',
         'ك' => 'ک',
@@ -57,5 +57,5 @@ return [
         ';' => '؛',
         '?' => '؟',
         ',' => '،',
-    ]
+    ],
 ];
