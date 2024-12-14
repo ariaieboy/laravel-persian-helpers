@@ -2,9 +2,9 @@
 
 namespace Ariaieboy\LaravelPersianHelpers\Tests;
 
+use Ariaieboy\LaravelPersianHelpers\LaravelPersianHelpersServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Ariaieboy\LaravelPersianHelpers\LaravelPersianHelpersServiceProvider;
 
 class TestCase extends Orchestra
 {

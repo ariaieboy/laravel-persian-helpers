@@ -2,9 +2,9 @@
 
 namespace Ariaieboy\LaravelPersianHelpers;
 
+use Ariaieboy\LaravelPersianHelpers\Commands\LaravelPersianHelpersCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ariaieboy\LaravelPersianHelpers\Commands\LaravelPersianHelpersCommand;
 
 class LaravelPersianHelpersServiceProvider extends PackageServiceProvider
 {
