@@ -15,7 +15,7 @@ class LaravelPersianHelpersServiceProvider extends PackageServiceProvider
      */
     public function bootingPackage(): void
     {
-        Str::mixin(new StrMixin());
+        Str::mixin(new StrMixin);
     }
 
     public function configurePackage(Package $package): void

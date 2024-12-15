@@ -1,5 +1,6 @@
 <?php
-it('will convert numbers to persian',function(){
+
+it('will convert numbers to persian', function () {
     expect(\Illuminate\Support\Str::toPersianDigit('٠0١1٢2٣3٤4٥5٦6٧7٨8٩9'))->toBe('۰۰۱۱۲۲۳۳۴۴۵۵۶۶۷۷۸۸۹۹');
 });
 it('will convert numbers to english', function () {
