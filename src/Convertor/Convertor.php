@@ -4,6 +4,9 @@ namespace Ariaieboy\LaravelPersianHelpers\Convertor;
 
 class Convertor
 {
+    /**
+     * @param array<string,string> $rules
+     */
     public function __construct(public array $rules = [])
     {
     }
