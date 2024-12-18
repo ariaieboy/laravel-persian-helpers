@@ -21,9 +21,10 @@
         "illuminate/contracts": "^v11.35.1"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.3",
+        "larastan/larastan": "^3.0.2",
         "laravel/pint": "^1.18.3",
         "nunomaduro/collision": "^8.5.0",
-        "larastan/larastan": "^3.0.2",
         "orchestra/testbench": "^9.8.0",
         "pestphp/pest": "^3.7.1",
         "pestphp/pest-plugin-arch": "^3.0",
