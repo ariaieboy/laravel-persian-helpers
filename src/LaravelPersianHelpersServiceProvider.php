@@ -27,9 +27,6 @@ class LaravelPersianHelpersServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-persian-helpers')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel_persian_helpers_table')
-            ->hasCommand(LaravelPersianHelpersCommand::class);
+            ->hasConfigFile();
     }
 }
