@@ -2,43 +2,35 @@
 
 namespace Ariaieboy\LaravelPersianHelpers\Macros;
 
-use Ariaieboy\LaravelPersianHelpers\Convertor\Convertor;
+use Ariaieboy\LaravelPersianHelpers\Facades\LaravelPersianHelpers;
 
 class StrMixin
 {
     public function toEnglishDigit(): \Closure
     {
         return function (string $string, ?array $customRules = null): string {
-            $rules = ! blank($customRules) ? $customRules : config('persian-helpers.to_english_digit');
-
-            return new Convertor($rules)->convert($string);
+            return LaravelPersianHelpers::toEnglishDigit($string, $customRules);
         };
     }
 
     public function toPersianDigit(): \Closure
     {
         return function (string $string, ?array $customRules = null): string {
-            $rules = ! blank($customRules) ? $customRules : config('persian-helpers.to_persian_digit');
-
-            return new Convertor($rules)->convert($string);
+            return LaravelPersianHelpers::toPersianDigit($string, $customRules);
         };
     }
 
     public function toPersianLetter(): \Closure
     {
         return function (string $string, ?array $customRules = null): string {
-            $rules = ! blank($customRules) ? $customRules : config('persian-helpers.to_persian_letter');
-
-            return new Convertor($rules)->convert($string);
+            return LaravelPersianHelpers::toPersianLetter($string, $customRules);
         };
     }
 
     public function toPersian(): \Closure
     {
         return function (string $string, ?array $customRules = null): string {
-            $rules = ! blank($customRules) ? $customRules : array_merge(config('persian-helpers.to_persian_digit'), config('persian-helpers.to_persian_letter'));
-
-            return new Convertor($rules)->convert($string);
+            return LaravelPersianHelpers::toPersian($string, $customRules);
         };
     }
 }
