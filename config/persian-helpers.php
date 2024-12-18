@@ -2,7 +2,7 @@
 
 // config for Ariaieboy/LaravelPersianHelpers
 return [
-    'rules'=>[
+    'rules' => [
         'to_persian_digit' => [
             '٠' => '۰',
             '0' => '۰',
@@ -59,5 +59,5 @@ return [
             '?' => '؟',
             ',' => '،',
         ],
-    ]
+    ],
 ];
