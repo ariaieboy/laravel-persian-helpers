@@ -2,7 +2,7 @@
 
 namespace Ariaieboy\LaravelPersianHelpers\Http\Middleware;
 
-use Ariaieboy\LaravelPersianHelpers\Facades\LaravelPersianHelpers;
+use Ariaieboy\LaravelPersianHelpers\Facades\PersianHelpers;
 use Illuminate\Foundation\Http\Middleware\TransformsRequest;
 use Override;
 
@@ -22,7 +22,7 @@ class ToEnglishDigit extends TransformsRequest
         if ($this->shouldSkip($key,$this->except)) {
             return $value;
         }
-        return LaravelPersianHelpers::toEnglishDigit($value);
+        return PersianHelpers::toEnglishDigit($value);
     }
 
     /**
