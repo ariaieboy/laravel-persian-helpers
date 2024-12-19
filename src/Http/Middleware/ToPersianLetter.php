@@ -6,13 +6,13 @@ use Ariaieboy\LaravelPersianHelpers\Facades\PersianHelpers;
 use Illuminate\Foundation\Http\Middleware\TransformsRequest;
 use Override;
 
-class ToEnglishDigit extends BaseMiddleware
+class ToPersianLetter extends BaseMiddleware
 {
     protected function transform(mixed $key, mixed $value): mixed
     {
-        if ($this->shouldSkip($key, $this->except)) {
+        if ($this->shouldSkip($key,$this->except)) {
             return $value;
         }
-        return PersianHelpers::toEnglishDigit($value);
+        return PersianHelpers::toPersianLetter($value);
     }
 }
