@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Ariaieboy\LaravelPersianHelpers\LaravelPersianHelpers
  */
-class LaravelPersianHelpers extends Facade
+class PersianHelpers extends Facade
 {
     protected static function getFacadeAccessor(): string
     {

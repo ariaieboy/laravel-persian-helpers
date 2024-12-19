@@ -5,15 +5,10 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ariaieboy/laravel-persian-helpers/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ariaieboy/laravel-persian-helpers/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ariaieboy/laravel-persian-helpers.svg?style=flat-square)](https://packagist.org/packages/ariaieboy/laravel-persian-helpers)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package will add some helpers and macros to the laravel that help you work with persian language and convert non persian character and digits to persian or vise-versa.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-persian-helpers.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-persian-helpers)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+## Requirement
+This package requires php version >= `8.4` and laravel version >= `11.35.1`
 
 ## Installation
 
@@ -23,39 +18,62 @@ You can install the package via composer:
 composer require ariaieboy/laravel-persian-helpers
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-persian-helpers-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="laravel-persian-helpers-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-persian-helpers-views"
-```
-
 ## Usage
-
+### Facade
 ```php
-$laravelPersianHelpers = new Ariaieboy\LaravelPersianHelpers();
-echo $laravelPersianHelpers->echoPhrase('Hello, Ariaieboy!');
+    PersianHelpers::toEnglishDigit('۱۲۳۴'); // will return "1234"
+
+    PersianHelpers::toPersianDigit('1234٥٤'); // will return "۱۲۳۴۵۴"
+
+    PersianHelpers::toPersianLetter(',;كإأؤةۀي?'); // will return "،؛کااوههی؟"
+    
+    PersianHelpers::toPersian('12ي'); // will return "۱۲ی"
 ```
 
+### `Str` macros
+
+```php
+    Str::toEnglishDigit('۱۲۳۴'); // will return "1234"
+
+    Str::toPersianDigit('1234٥٤'); // will return "۱۲۳۴۵۴"
+
+    Str::toPersianLetter(',;كإأؤةۀي?'); // will return "،؛کااوههی؟"
+    
+    Str::toPersian('12ي'); // will return "۱۲ی"
+```
+### Middlewares
+By using these middlewares all the user inputs will be converted to correct format.
+```php
+use Ariaieboy\LaravelPersianHelpers\Http\Middleware\ToEnglishDigit;
+use Ariaieboy\LaravelPersianHelpers\Http\Middleware\ToPersianDigit;
+use Ariaieboy\LaravelPersianHelpers\Http\Middleware\ToPersianLetter;
+use Ariaieboy\LaravelPersianHelpers\Http\Middleware\ToPersian;
+Route::post('example1')->middleware(ToEnglishDigit::class);
+Route::post('example2')->middleware(ToPersianDigit::class);
+Route::post('example3')->middleware(ToPersianLetter::class);
+Route::post('example4')->middleware(ToPersian::class);
+```
+> Note: by default `current_password`,`password` and `password_confirmation` inputs are ignored and are not affected by this middleware to customize this behavior you should extend each of this middleware and change the `$except` property of the middleware
+
+```php
+class MyCustomToEnglishDigitMiddleware extends \Ariaieboy\LaravelPersianHelpers\Http\Middleware\ToEnglishDigit{
+    /**
+    * @var array<string> 
+    */
+    protected array $except = [
+    'title',
+    'password'
+];
+}
+
+Route::post('example')->middleware(MyCustomToEnglishDigitMiddleware::class);
+```
 ## Testing
 
 ```bash
