@@ -10,7 +10,7 @@ class ToEnglishDigit extends BaseMiddleware
 {
     protected function transform(mixed $key, mixed $value): mixed
     {
-        if ($this->shouldSkip($key, $this->except)) {
+        if ($this->shouldSkip($key, $this->except)||!is_string($value)) {
             return $value;
         }
         return PersianHelpers::toEnglishDigit($value);

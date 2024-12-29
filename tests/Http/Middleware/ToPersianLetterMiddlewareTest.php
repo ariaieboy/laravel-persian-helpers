@@ -18,3 +18,15 @@ it('will not change the excepted attributes', function () {
             ->password->toBe('?');
     });
 });
+it('will not change non string values', function () {
+    $request = new \Illuminate\Http\Request();
+    $request->merge([
+        'int'=>0,
+        'digits'=>'?'
+    ]);
+    new \Ariaieboy\LaravelPersianHelpers\Http\Middleware\ToPersianLetter()->handle($request,function($request){
+        expect($request)
+            ->digits->toBe('؟')
+            ->int->toBe(0);
+    });
+});

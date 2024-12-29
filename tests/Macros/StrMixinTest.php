@@ -12,3 +12,9 @@ it('will convert persian letters', function () {
 it('can convert to persian', function () {
     expect(\Illuminate\Support\Str::toPersian('٠0١1٢2٣3٤4٥5٦6٧7٨8٩9,;كإأؤةۀي?'))->toBe('۰۰۱۱۲۲۳۳۴۴۵۵۶۶۷۷۸۸۹۹،؛کااوههی؟');
 });
+it('can handle null values', function () {
+    expect(Str::toEnglishDigit(null))->toBe(null)
+    ->and(Str::toPersianDigit(null))->toBe(null)
+    ->and(Str::toPersianLetter(null))->toBe(null)
+    ->and(Str::toPersian(null))->toBe(null);
+});
