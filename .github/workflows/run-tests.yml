@@ -14,8 +14,11 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         php: [8.4]
-        laravel: [11.*]
+        laravel: [11.*,12.*]
         include:
+          - laravel: 12.*
+            testbench: 10.*
+            carbon: ^2.63
           - laravel: 11.*
             testbench: 9.*
             carbon: ^2.63
