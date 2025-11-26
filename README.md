@@ -8,7 +8,7 @@
 This package will add some helpers and macros to the laravel that help you work with persian language and convert non persian character and digits to persian or vise-versa.
 
 ## Requirement
-This package requires php version >= `8.4` and laravel version >= `11.35.1`
+This package requires php version >= `8.4` and laravel version >= `12`
 
 ## Installation
 
